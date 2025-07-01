@@ -9,7 +9,7 @@
 /* Imagens da galeria */
 .image img {
     width: 200px;
-    height: auto;
+    height: 200px;
     aspect-ratio: 1 / 1; /* Mantém a proporção das imagens como quadradas */
     object-fit: cover;  /* Garante que a imagem cubra a área sem distorção */
     margin: 3px;
