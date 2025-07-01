@@ -22,10 +22,10 @@ function loadGallery() {
 
     // Lista de imagens (adicione ou remova conforme necessário)
     const images = [
-        "images/foto1.jpg",
-        "images/foto2.jpg",
-        "images/foto3.jpg",
-        "images/foto4.jpg",
+        "images/1.jpg",
+        "images/2.jpg",
+        "images/3.jpg",
+        "images/4.jpg",
         // Você pode adicionar mais imagens manualmente aqui
     ];
 
