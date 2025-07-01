@@ -1,44 +1,79 @@
+/* Galeria de imagens */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Colunas dinâmicas */
+    gap: 20px;
     padding: 20px;
 }
 
+/* Imagens da galeria */
 .image img {
-    width: 100%;
+    width: 200px;
     height: auto;
+    aspect-ratio: 1 / 1; /* Mantém a proporção das imagens como quadradas */
+    object-fit: cover;  /* Garante que a imagem cubra a área sem distorção */
+    margin: 3px;
     cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease-in-out;
 }
 
+/* Efeito de hover: aumenta a imagem */
 .image img:hover {
-    transform: scale(1.05);
+    transform: scale(1.15); /* Aumenta a imagem ao passar o mouse */
 }
 
+/* Overlay da imagem ampliada */
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 300%;
+    height: 300%;
     background: rgba(0, 0, 0, 0.8);
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
 }
 
+/* Estilo para a imagem ampliada */
 .overlay img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 90%;
+    max-height: 90%;
     box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease; /* Animação suave para o zoom */
 }
 
+/* Efeito de zoom quando a imagem é clicada no overlay */
+.overlay img:hover {
+    transform: scale(1.2); /* Aumenta a imagem um pouco ao passar o mouse sobre ela */
+}
+
+/* Fundo da página */
 body {
     background-color: #f0f0f0;
 }
 
-body.blur {
-    filter: blur(5px);
+/* Responsividade */
+
+/* Para telas pequenas (celulares), mostrar 1 coluna */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 }
+
+/* Para telas médias (tablets), mostrar 2 colunas */
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para telas grandes (desktops), mostrar 3 colunas */
+@media (min-width: 901px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
