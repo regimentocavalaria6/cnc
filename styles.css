@@ -1,0 +1,72 @@
+/* Resetando margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('background.jpg');  /* Coloque o caminho da sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+/* Estilo do título */
+h1 {
+    text-align: center;
+    font-size: 3em;
+    margin-top: 20%;
+}
+
+/* Container dos botões */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;  /* Posiciona os botões um pouco acima da parte inferior */
+    width: 100%;
+    gap: 15px;  /* Espaçamento entre os botões */
+}
+
+/* Estilo dos botões */
+.button {
+    background-color: rgba(0, 0, 0, 0.7);  /* Cor de fundo escura */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.9);  /* Escurecer o fundo ao passar o mouse */
+    transform: scale(1.1);  /* Aumenta o tamanho do botão ao passar o mouse */
+}
+
+/* Adaptar o layout para telas menores */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
+   
